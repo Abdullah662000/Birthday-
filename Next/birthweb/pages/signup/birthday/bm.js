@@ -50,32 +50,11 @@ function bm() {
   const [error, setError] = useState(null);
   return (
     <div className=" bg-cover bg-no-repeat w-full h-full bg-[url('/project.png')] text-mycolor ">
-      <div className="relative  w-screen h-screen flex justify-center items-center mx-64 space-y-5 ">
-        <div
-          className={
-            showcreate
-              ? "absolute top-96 space-x-3"
-              : "absolute top-64 space-x-3 "
-          }
-        >
-          <button className="border-2 rounded-md   " onClick={getFriends}>
-            Get friends
-          </button>
-
-          <button
-            className="border-2 rounded-md "
-            onClick={() => {
-              setShowCreate(true);
-            }}
-          >
-            Add Friend
-          </button>
-        </div>
-
+      <div className="relative  w-screen h-screen flex justify-center items-center  space-y-5 ">
         <br></br>
         <div>
           {showcreate ? (
-            <div className="flex  flex-col border-2 p-20 rounded-lg ">
+            <div className="flex  flex-col relative border-2 space-y-2 p-20 md:w-96 md:h-96 rounded-lg bg-pink">
               <label className="">Enter the name</label>
               <input
                 type="text"
@@ -92,6 +71,7 @@ function bm() {
                 }}
               ></input>
               <button
+                className="border-2 rounded-md hover:scale-90 "
                 onClick={() => {
                   setArray();
                 }}
@@ -100,9 +80,26 @@ function bm() {
               </button>
               {message && <div className="text-black"> {message} </div>}
               {error && <div className="text-red"> {error} </div>}
+              <div className={"absolute top-1 space-x-3"}>
+                <button
+                  className="border-2 rounded-md bg-pink md:p-1 hover:scale-90 "
+                  onClick={getFriends}
+                >
+                  Get friends
+                </button>
+
+                <button
+                  className="border-2 rounded-md bg-pink md:p-1 hover:scale-90"
+                  onClick={() => {
+                    setShowCreate(true);
+                  }}
+                >
+                  Add Friend
+                </button>
+              </div>
             </div>
           ) : (
-            <div className="flex flex-col rounded-lg p-2 border-2">
+            <div className="flex flex-col relative rounded-lg p-2 border-2 bg-pink">
               {friend.map((user) => {
                 const { name, date } = user;
 
@@ -117,6 +114,23 @@ function bm() {
               })}
               {message && <div className="text-black"> {message} </div>}
               {error && <div className="text-red"> {error} </div>}
+              <div className={"absolute -top-4 md:-top-7  space-x-3  "}>
+                <button
+                  className="border-2 rounded-md bg-pink md:p-1 hover:scale-90 "
+                  onClick={getFriends}
+                >
+                  Get friends
+                </button>
+
+                <button
+                  className="border-2 rounded-md bg-pink md:p-1 hover:scale-90 "
+                  onClick={() => {
+                    setShowCreate(true);
+                  }}
+                >
+                  Add Friend
+                </button>
+              </div>
             </div>
           )}
         </div>

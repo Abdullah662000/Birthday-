@@ -20,6 +20,7 @@ module.exports = {
     },
     colors: {
       mycolor: "#c672ed",
+      pink: "#fdf1fa",
     },
     extend: {},
   },

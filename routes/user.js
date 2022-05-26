@@ -52,7 +52,6 @@ router.post("/signup", async (req, res) => {
 });
 router.post("/login", async (req, res) => {
   try {
-    console.log(req.body);
     const val = await loginvalidate(req.body);
     const user = await Signup.findOne({ email: req.body.email });
     if (user) {

@@ -42,30 +42,30 @@ function Home() {
     getResponse();
   }, []);
   return (
-    <div className=" bg-cover bg-no-repeat w-full h-full bg-[url('/project.png')] text-mycolor ">
-      <div className="  w-screen h-screen flex justify-center items-center mx-64">
-        <div className="flex justify-center flex-col items-start border-4 px-14 py-16 w-96 h-80  border-mycolor rounded-lg">
-          <div className="space-y-2">
+    <div className=" bg-cover bg-no-repeat w-full h-full bg-[url('/project.png')] text-mycolor bg-pink ">
+      <div className="  w-screen h-screen flex justify-end items-center ">
+        <div className="flex justify-end flex-col items-center border-4 px-14 py-16 w-72 h-80 md:w-96 md:h-96 lg:mr-32 xl:mr-64 bg-pink  border-mycolor rounded-lg">
+          <div className="space-y-2 mt-9">
             <h1 className="">Lets Get you Signed In</h1>
             <div className="relative space-y-4">
               <input
-                className=" outline-mycolor px-1 rounded-md h-8 "
+                className=" outline-mycolor px-1 rounded-md w-40 md:w-52 h-8 "
                 type="text"
-                placeholder="Enter your email"
+                placeholder="Email"
                 onChange={(e) => {
                   setEmail(e.target.value);
                 }}
               />
               <input
-                className=" outline-mycolor px-1 rounded-md h-8"
+                className=" outline-mycolor px-1 rounded-md w-40 md:w-52 h-8"
                 type={ShowPass ? "text" : "password"}
-                placeholder="enter your password"
+                placeholder="Password"
                 onChange={(e) => {
                   setPassword(e.target.value);
                 }}
               />
               <button
-                className="absolute px-1 top-10 md:left-32 xl:left-40"
+                className="absolute left-32  px-1 top-10 md:left-44 "
                 onClick={() => setShowPass(!ShowPass)}
               >
                 <div className="">
@@ -103,7 +103,7 @@ function Home() {
               <br></br>
               <div className="">
                 <button
-                  className="border-2 hover:scale-90 border-black pl-16 pr-16 rounded-md"
+                  className="border-2 hover:scale-90  border-black pl-14 pr-14 md:pl-20 md:pr-20 rounded-md"
                   onClick={() => {
                     loginUser();
                   }}
